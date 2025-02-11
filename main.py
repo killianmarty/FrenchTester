@@ -38,7 +38,9 @@ def get_estimated_knowledge():
         if(answer["answer"]):
             good += 1
 
-    percentage = good / len(answers)
+    percentage = 1
+    if(len(answers)!=0):
+        percentage = good / len(answers)
     estimation = percentage * len(data)
 
     return percentage, estimation
