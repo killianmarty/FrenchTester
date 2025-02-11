@@ -4,7 +4,7 @@ Testez votre connaissance de la langue française ! Ce projet vous permet d'esti
 
 ## Installation et utilisation
 
-```
+```bash
 git clone "https://github.com/killianmarty/FrenchTester"
 cd FrenchTester
 python3 main.py 
