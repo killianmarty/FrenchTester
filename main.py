@@ -43,7 +43,7 @@ def get_estimated_knowledge():
         percentage = good / len(answers)
     estimation = percentage * len(data)
 
-    return percentage, estimation
+    return len(answers), percentage, estimation
 
 
 data_src="data/data.json"
@@ -53,11 +53,11 @@ data = load_data(data_src)
 answers = load_data(answers_src)
 
 current_id, current_question = get_question(data)
-percentage, estimation = get_estimated_knowledge()
+answers_length, percentage, estimation = get_estimated_knowledge()
 
 while(True):
     print('')
-    print(f'Estimation: {round(percentage, 2)}% soit {round(estimation)} mots.')
+    print(f'Nombre de réponses: {answers_length}. Vous connaissez (estimation): {round(percentage*100, 1)}% de la langue française, soit {round(estimation)} mots.')
     print(current_question)
 
     input_text = "Connaissez-vous ce mot ? (y/n/back): "
@@ -81,6 +81,6 @@ while(True):
     save_answers(answers_src)
 
     current_id, current_question = get_question(data)
-    percentage, estimation = get_estimated_knowledge()
+    answers_length, percentage, estimation = get_estimated_knowledge()
 
 
