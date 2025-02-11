@@ -44,7 +44,7 @@ def get_estimated_knowledge():
     return percentage, estimation
 
 
-data_src="data/new_data.json"
+data_src="data/data.json"
 answers_src="data/answers.json"
 
 data = load_data(data_src)
